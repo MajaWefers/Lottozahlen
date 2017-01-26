@@ -27,7 +27,7 @@ namespace Lottozahlen
                 System.Random zufall = new System.Random();
                 int[] lotto_ausgabe = new int[7];
 
-                for (int i = 0; i <= 6; i++)
+                for (int i = 0; i < 6; i++)
                 {
                     int currentChoice;
                     do
@@ -36,19 +36,16 @@ namespace Lottozahlen
                     }   while (lotto_ausgabe.Contains(currentChoice));
 
                     lotto_ausgabe[i] = currentChoice;
-
-                    if (i < 6)
-                    {
-                        Console.WriteLine("Zahl " + (i + 1) + ": " + lotto_ausgabe[i]);
-                    }
-                    else
-                    {
-                        Console.WriteLine("\nZusatzzahl: " + lotto_ausgabe[i]);
-                    }
+                    
+                    Console.WriteLine("Zahl " + (i + 1) + ": " + lotto_ausgabe[i]);
                 }
 
-                //int zusatz = zufall.Next(1, 9);
-                //Console.WriteLine("\nSuperzahl: " + zusatz);
+                int superzahl = zufall.Next(1, 9);
+                lotto_ausgabe[6] = superzahl;
+                Console.WriteLine("\nSuperzahl: " + superzahl);
+
+                //Ausgabe der gesamten Array-Indexwerte mit Komma getrennt
+                Console.Write("\nArraywerte: " + String.Join(", ",lotto_ausgabe) + "\n");
 
                 Console.WriteLine("\nNoch einmal? [j/n]");
                 antwort = Console.ReadLine();

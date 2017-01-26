@@ -1,0 +1,6 @@
+C:\Users\M_Wb\Desktop\C#_Projekte\Lottozahlen\Lottozahlen\obj\Debug\Lottozahlen.csprojResolveAssemblyReference.cache
+C:\Users\M_Wb\Desktop\C#_Projekte\Lottozahlen\Lottozahlen\bin\Debug\Lottozahlen.exe.config
+C:\Users\M_Wb\Desktop\C#_Projekte\Lottozahlen\Lottozahlen\bin\Debug\Lottozahlen.exe
+C:\Users\M_Wb\Desktop\C#_Projekte\Lottozahlen\Lottozahlen\bin\Debug\Lottozahlen.pdb
+C:\Users\M_Wb\Desktop\C#_Projekte\Lottozahlen\Lottozahlen\obj\Debug\Lottozahlen.exe
+C:\Users\M_Wb\Desktop\C#_Projekte\Lottozahlen\Lottozahlen\obj\Debug\Lottozahlen.pdb

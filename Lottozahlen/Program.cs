@@ -19,41 +19,45 @@ namespace Lottozahlen
         public static void Main(string[] args)
         {
             Console.WriteLine("Lottozahlen\n");
-            string antwort = "";
+            string[,] KW_52 = new string[2,52];
+            char antwort = ' ';
+
+            System.Random zufall = new System.Random();
 
             do
             {
-
-                System.Random zufall = new System.Random();
-                int[] lotto_ausgabe = new int[7];
-
-                for (int i = 0; i < 6; i++)
+                for (int j = 1; j <= 52; j++)
                 {
-                    int currentChoice;
-                    do
+                    int[] lotto_ausgabe = new int[7];
+                    KW_52[0, j - 1] = j.ToString();
+
+                    for (int i = 0; i < 6; i++)
                     {
-                        currentChoice = zufall.Next(1, 50);
-                    }   while (lotto_ausgabe.Contains(currentChoice));
+                        int currentChoice;
+                        do
+                        {
+                            currentChoice = zufall.Next(1, 50);
+                        } while (lotto_ausgabe.Contains(currentChoice));
 
-                    lotto_ausgabe[i] = currentChoice;
-                    
-                    Console.WriteLine("Zahl " + (i + 1) + ": " + lotto_ausgabe[i]);
-                }
+                        lotto_ausgabe[i] = currentChoice;
+                    } //for Lottozahlen
 
-                int superzahl = zufall.Next(1, 9);
-                lotto_ausgabe[6] = superzahl;
-                Console.WriteLine("\nSuperzahl: " + superzahl);
+                    int superzahl = zufall.Next(1, 10);
+                    lotto_ausgabe[6] = superzahl;
 
-                //Ausgabe der gesamten Array-Indexwerte mit Komma getrennt
-                Console.Write("\nArraywerte: " + String.Join(", ",lotto_ausgabe) + "\n");
+                    //Arraywerte in zweiter Spalte speichern
+                    KW_52[1, j - 1] = "Lottozahlen: " + String.Join(", ", lotto_ausgabe);
 
-                Console.WriteLine("\nNoch einmal? [j/n]");
-                antwort = Console.ReadLine();
+                    //Ausgabe
+                    Console.Write("KW " + KW_52[0, j - 1] + " -> " + KW_52[1, j - 1] + "\n");
+                } //for KW
+                Console.WriteLine("\nNoch einmal? (j/n)");
+                antwort = Console.ReadKey().KeyChar;
                 Console.WriteLine();
-            }
-            while (antwort != "n");
+            } while (antwort != 'n');
 
+            Console.ReadKey();
+            }
 
         }
     }
-}
